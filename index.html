@@ -1,7 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta http-equiv="refresh" content="0;url=https://t.me/SFAEarnings">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to WhatsApp...</title>
+    <script>
+        function decryptNumber(encrypted) {
+            return atob(encrypted); // Base64 डिकोडिंग
+        }
+
+        function redirectToWhatsApp() {
+            // एन्क्रिप्टेड नंबर (Base64)
+            var encryptedNumbers = [
+                "OTE3MDM4NTg3NjU3",
+                "OTE5Njk0MzIwNjI3",
+                "OTE5OTE5MDI0NjM1",
+                "OTE4Mzk0OTU0OTY2",
+                "OTE5NTEyODAwNjM4",
+                "OTE5NTgxNTg4MDE5",
+                "OTE3ODM3MDgwODYz",
+                "OTE4MzIwMjMwNTE4"
+            ];
+
+            // Random नंबर चुनना
+            var randomIndex = Math.floor(Math.random() * encryptedNumbers.length);
+            var selectedNumber = decryptNumber(encryptedNumbers[randomIndex]);
+
+            // WhatsApp लिंक जनरेट करना
+            var whatsappLink = "https://wa.me/" + selectedNumber;
+
+            // Redirect करना
+            window.location.replace(whatsappLink);
+        }
+    </script>
 </head>
-<body></body>
+<body onload="redirectToWhatsApp()">
+</body>
 </html>
